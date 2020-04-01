@@ -1,0 +1,12 @@
+{
+    "name": "stichoza/laravel-coderunner",
+    "description": "Add Laravel support to CodeRunner",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levan Velijanashvili",
+            "email": "me@stichoza.com"
+        }
+    ],
+    "require": {}
+}
