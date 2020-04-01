@@ -1,6 +1,7 @@
 {
     "name": "stichoza/laravel-coderunner",
     "description": "Add Laravel support to CodeRunner",
+    "keywords": ["laravel", "coderunner", "mac", "tinker", "tinkerwell", "psy", "shell"],
     "license": "MIT",
     "authors": [
         {
