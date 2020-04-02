@@ -56,3 +56,8 @@ if (version_compare($laravelCodeRunner['laravel_version'], '7.0.0', '>=')) {
 } else {
     die('Laravel ' . $laravelCodeRunner['laravel_version'] . ' not supported' . PHP_EOL);
 }
+
+/*
+ * Run coderunner script
+ */
+require_once trim(shell_exec('pwd')) . '/' . $argv[1];
