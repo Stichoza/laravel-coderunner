@@ -9,9 +9,11 @@ Add Laravel support to **[CodeRunner](https://coderunnerapp.com)** (Tinker in Co
 
 Install this package globally via [Composer](https://getcomposer.org/).
 
-```
+```bash
 composer global require stichoza/laravel-coderunner
-
+```
+And initialize default laravel app (optional).
+```bash
 laravel-coderunner install-default
 ```
 
