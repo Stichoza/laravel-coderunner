@@ -1,7 +1,7 @@
 # Laravel CodeRunner
 [![Latest Stable Version](https://img.shields.io/packagist/v/Stichoza/laravel-coderunner.svg)](https://packagist.org/packages/stichoza/laravel-coderunner) [![Total Downloads](https://img.shields.io/packagist/dt/Stichoza/laravel-coderunner.svg)](https://packagist.org/packages/stichoza/laravel-coderunner) [![Downloads Month](https://img.shields.io/packagist/dm/Stichoza/laravel-coderunner.svg)](https://packagist.org/packages/stichoza/laravel-coderunner) [![PayPal donation](https://img.shields.io/badge/paypal-donate-blue.svg)](https://paypal.me/stichoza)
 
-Add Laravel support to CodeRunner (Tinker in CodeRunner).
+Add Laravel support to [CodeRunner](https://coderunnerapp.com) (Tinker in CodeRunner).
 
 ## Installation
 
