@@ -29,7 +29,7 @@ if (file_exists($laravelCodeRunner['composer_path'])) {
      */
     foreach ($laravelCodeRunner['composer_lock']['packages'] ?? [] as $package) {
         if ($package['name'] === 'laravel/framework') {
-            $laravelCodeRunner['laravel_version'] = $package['version'];
+            $laravelCodeRunner['laravel_version'] = preg_replace('/[^0-9\.]/', '', $package['version']);
             break;
         }
     }
