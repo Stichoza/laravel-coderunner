@@ -33,8 +33,14 @@ laravel-coderunner $filename
 
 <p align="center"><img width="619" alt="Screen Shot 2020-04-02 at 14 40 22" src="https://user-images.githubusercontent.com/1139050/78240331-e9fe8a00-74ef-11ea-8da6-102ade27cbe6.png"></p>
 
-### Running code for specific project
-By default, the code is evaluated in default Laravel installation that is provided with this package. Follow this steps if you want to run code in different project:
+### Running in default laravel app
+
+To run code in default laravel app, run `laravel-coderunner install-default` in your terminal (Only once, after installing this package).
+
+If you want to reset the default app, you can run `laravel-coderunner reset-default` anytime.
+
+### Running in specific project
+By default, the code is evaluated in default Laravel installation described above. Follow this steps if you want to run code in different project:
 
 1. Assuming you already have Laravel available in CodeRunner, click "Run Settings..." button right next to Run and Stop buttons.
 1. Enter **absolute** path to your project in Arguments field.
