@@ -11,6 +11,8 @@ Install this package globally via [Composer](https://getcomposer.org/).
 
 ```
 composer global require stichoza/laravel-coderunner
+
+laravel-coderunner install-default
 ```
 
 ## Usage
@@ -35,9 +37,10 @@ laravel-coderunner $filename
 
 ### Running in default laravel app
 
-To run code in default laravel app, run `laravel-coderunner install-default` in your terminal (Only once, after installing this package).
-
-If you want to reset the default app, you can run `laravel-coderunner reset-default` anytime.
+Default laravel app is already installed via `laravel-coderunner install-default` command. If you want to reset the default app, you can run:
+```bash
+laravel-coderunner reset-default
+```
 
 ### Running in specific project
 By default, the code is evaluated in default Laravel installation described above. Follow this steps if you want to run code in different project:
