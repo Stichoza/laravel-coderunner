@@ -18,9 +18,10 @@ composer global require stichoza/laravel-coderunner
 1. Right-click on `PHP` and select Duplicate.
 1. Name new language `Laravel`.
 1. Write following in the "Run Command" field:
-    ```bash
-    laravel-coderunner $filename
-    ```
+
+```bash
+laravel-coderunner $filename
+```
 
 ### Running code for specific project.
 By default, the code is evaluated in default Laravel installation that is provided with this package. Follow this steps if you want to run code in different project:
