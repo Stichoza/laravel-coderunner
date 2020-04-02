@@ -5,7 +5,7 @@
  * Variable for laravel-coderunner configuration
  */
 $laravelCodeRunner = [
-    'path' => $argv[1] ?? __DIR__ . '/default-laravel',
+    'path' => $argv[2] ?? __DIR__ . '/default-laravel',
     'laravel_version' => null,
 ];
 
