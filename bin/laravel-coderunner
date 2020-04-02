@@ -44,4 +44,15 @@ if (file_exists($laravelCodeRunner['composer_path'])) {
     die('Unable to locate composer.lock for project.' . PHP_EOL);
 }
 
-echo 'Laravel version is ' . $laravelCodeRunner['laravel_version'] . "\n";
+/*
+ * Check laravel version and boot application
+ */
+if (version_compare($laravelCodeRunner['laravel_version'], '7.0.0', '>=')) {
+    require_once '../src/laravel-7.x.php';
+} elseif (version_compare($laravelCodeRunner['laravel_version'], '6.0.0', '>=')) {
+    require_once '../src/laravel-6.x.php';
+} elseif (version_compare($laravelCodeRunner['laravel_version'], '5.5.0', '>=')) {
+    require_once '../src/laravel-5.5.php';
+} else {
+    die('Laravel ' . $laravelCodeRunner['laravel_version'] . ' not supported' . PHP_EOL);
+}
