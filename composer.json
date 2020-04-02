@@ -16,11 +16,11 @@
         "php": "^7.2"
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-package-install": [
             "rm -rf laravel",
             "composer create-project --prefer-dist laravel/laravel laravel"
         ],
-        "post-update-cmd": [
+        "post-package-update": [
             "rm -rf laravel",
             "composer create-project --prefer-dist laravel/laravel laravel"
         ]
