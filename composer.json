@@ -14,5 +14,9 @@
     ],
     "require": {
         "php": "^7.2"
+    },
+    "scripts": {
+        "post-install-cmd": "composer create-project --prefer-dist laravel/laravel laravel",
+        "post-update-cmd": "composer create-project --prefer-dist laravel/laravel laravel"
     }
 }
