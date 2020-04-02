@@ -23,7 +23,7 @@ composer global require stichoza/laravel-coderunner
 laravel-coderunner $filename
 ```
 
-### Running code for specific project.
+### Running code for specific project
 By default, the code is evaluated in default Laravel installation that is provided with this package. Follow this steps if you want to run code in different project:
 
 1. Assuming you already have Laravel available in CodeRunner, click "Run Settings..." button right next to Run and Stop buttons.
