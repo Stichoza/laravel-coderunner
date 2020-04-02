@@ -2,21 +2,21 @@
 <?php
 
 /*
- * Install or reset default larvel app
- */
-if (in_array($argv[1] ?? null, ['install-default', 'reset-default'])) {
-    $command = 'composer run-script install-laravel -d ' . str_replace('/bin', '', __DIR__);
-    echo 'Installing default laravel app.' . PHP_EOL;
-    echo "\e[1m> \e[2;32m"  . $command . "\e[0m" . PHP_EOL;
-    shell_exec($command);
-    die('Done.' . PHP_EOL);
-}
-
-/*
- * Path to Laravel application (fallback to default laravel app)
+ * Path to Laravel application (fallback to default laravel app) and default app install
  */
 define('LARAVEL_CODERUNNER_PROJECT_PATH', $argv[2] ?? __DIR__ . '/../laravel');
 define('LARAVEL_CODERUNNER_PROJECT_ROOT', LARAVEL_CODERUNNER_PROJECT_PATH . '/public');
+define('LARAVEL_CODERUNNER_INSTALL_LARAVEL', 'composer run-script install-laravel -d ' . str_replace('/bin', '', __DIR__));
+
+/*
+ * Install or reset default larvel app
+ */
+if (in_array($argv[1] ?? null, ['install-default', 'reset-default'])) {
+    echo 'Installing default laravel app.' . PHP_EOL;
+    echo "\e[1m> \e[2;32m"  . LARAVEL_CODERUNNER_INSTALL_LARAVEL . "\e[0m" . PHP_EOL;
+    shell_exec(LARAVEL_CODERUNNER_INSTALL_LARAVEL);
+    die('Done.' . PHP_EOL);
+}
 
 /*
  * Variable for laravel-coderunner configuration
