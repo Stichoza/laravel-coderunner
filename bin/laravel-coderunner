@@ -2,17 +2,22 @@
 <?php
 
 /*
+ * Path to Laravel application (fallback to default laravel app)
+ */
+define('LARAVEL_CODERUNNER_PROJECT_PATH', $argv[2] ?? __DIR__ . '/default-laravel');
+define('LARAVEL_CODERUNNER_PROJECT_ROOT', LARAVEL_CODERUNNER_PROJECT_PATH . '/public');
+
+/*
  * Variable for laravel-coderunner configuration
  */
 $laravelCodeRunner = [
-    'path' => $argv[2] ?? __DIR__ . '/default-laravel',
     'laravel_version' => null,
 ];
 
 /*
  * Build path to composer.lock
  */
-$laravelCodeRunner['composer_path'] = $laravelCodeRunner['path'] . '/composer.lock';
+$laravelCodeRunner['composer_path'] = LARAVEL_CODERUNNER_PROJECT_PATH . '/composer.lock';
 
 if (file_exists($laravelCodeRunner['composer_path'])) {
     try {
@@ -45,14 +50,10 @@ if (file_exists($laravelCodeRunner['composer_path'])) {
 }
 
 /*
- * Check laravel version and boot application
+ * Check laravel version and boot application accordingly
  */
-if (version_compare($laravelCodeRunner['laravel_version'], '7.0.0', '>=')) {
-    require_once '../src/laravel-7.x.php';
-} elseif (version_compare($laravelCodeRunner['laravel_version'], '6.0.0', '>=')) {
-    require_once '../src/laravel-6.x.php';
-} elseif (version_compare($laravelCodeRunner['laravel_version'], '5.5.0', '>=')) {
-    require_once '../src/laravel-5.5.php';
+if (version_compare($laravelCodeRunner['laravel_version'], '5.5.0', '>=')) {
+    require_once __DIR__.'/../src/boot/laravel.php';
 } else {
     die('Laravel ' . $laravelCodeRunner['laravel_version'] . ' not supported' . PHP_EOL);
 }
@@ -60,4 +61,8 @@ if (version_compare($laravelCodeRunner['laravel_version'], '7.0.0', '>=')) {
 /*
  * Run coderunner script
  */
-require_once trim(shell_exec('pwd')) . '/' . $argv[1];
+if (substr($argv[1], 0, 1) === '/') {
+    require_once $argv[1];
+} else {
+    require_once trim(shell_exec('pwd')) . '/' . $argv[1];
+}
