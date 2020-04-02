@@ -29,4 +29,4 @@ laravel-coderunner $filename
 By default, the code is evaluated in default Laravel installation that is provided with this package. Follow this steps if you want to run code in different project:
 
 1. Assuming you already have Laravel available in CodeRunner, click "Run Settings..." button right next to Run and Stop buttons.
-1. Enter path to your project in Arguments field.
+1. Enter **absolute** path to your project in Arguments field.
