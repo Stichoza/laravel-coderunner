@@ -12,5 +12,7 @@
             "email": "me@stichoza.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^7.2"
+    }
 }
