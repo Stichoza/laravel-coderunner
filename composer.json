@@ -18,7 +18,7 @@
     "scripts": {
         "install-laravel": [
             "rm -rf laravel",
-            "composer create-project --prefer-dist laravel/laravel laravel"
+            "@composer create-project --prefer-dist laravel/laravel laravel"
         ],
         "post-package-install": "@install-laravel",
         "post-package-update": "@install-laravel"
