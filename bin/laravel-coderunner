@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+
+$laravelCodeRunner = [
+    'path' => $argv[1] ?? __DIR__ . '/default-laravel',
+    'laravel_version' => null,
+];
+
+$laravelCodeRunner['composer_path'] = $laravelCodeRunner['path'] . '/composer.lock';
+
+if (file_exists($laravelCodeRunner['composer_path'])) {
+    try {
+        $laravelCodeRunner['composer_lock'] = json_decode(file_get_contents($laravelCodeRunner['composer_path']), true);
+    } catch (Exception $e) {
+        die('Unable to read contents of composer.lock for project.' . PHP_EOL);
+    }
+
+    foreach ($laravelCodeRunner['composer_lock']['packages'] ?? [] as $package) {
+        if ($package['name'] === 'laravel/framework') {
+            $laravelCodeRunner['laravel_version'] = $package['version'];
+            break;
+        }
+    }
+
+    if (!$laravelCodeRunner['laravel_version']) {
+        die('Unable to locate laravel installation in path.' . PHP_EOL);
+    }
+} else {
+    die('Unable to locate composer.lock for project.' . PHP_EOL);
+}
+
+echo 'Laravel version is ' . $laravelCodeRunner['laravel_version'] . "\n";
