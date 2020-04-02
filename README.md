@@ -29,7 +29,7 @@ laravel-coderunner $filename
 
 <p align="center"><img width="737" alt="Screen Shot 2020-04-02 at 14 36 34" src="https://user-images.githubusercontent.com/1139050/78239965-6ba1e800-74ef-11ea-8990-09caf61b8a87.png"></p>
 
-**Note:** If you don't have composer path added in your `.profile` or `.bash_profile`, go to CodeRunner preferences, navigate to Advanced tab and add `/Users/YOUR_USERNAME/.composer/vendor/bin` to `PATH` shell variable.
+**Note:** If you don't have composer [vendor binaries](https://getcomposer.org/doc/articles/vendor-binaries.md) path added in your `.profile` or `.bash_profile`, do it so, or otherwise go to CodeRunner preferences, navigate to Advanced tab and add binary path (e.g. `/Users/YOUR_USERNAME/.composer/vendor/bin`) to `PATH` shell variable.
 
 <p align="center"><img width="619" alt="Screen Shot 2020-04-02 at 14 40 22" src="https://user-images.githubusercontent.com/1139050/78240331-e9fe8a00-74ef-11ea-8da6-102ade27cbe6.png"></p>
 
