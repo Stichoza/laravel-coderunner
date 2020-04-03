@@ -43,9 +43,9 @@ if (file_exists($laravelCodeRunner['composer_path'])) {
     /*
      * Iterate over installed packages to find laravel/framework installation
      */
-    foreach ($laravelCodeRunner['composer_lock']['packages'] ?? [] as $package) {
-        if ($package['name'] === 'laravel/framework') {
-            $laravelCodeRunner['laravel_version'] = preg_replace('/[^0-9\.]/', '', $package['version']);
+    foreach ($laravelCodeRunner['composer_lock']['packages'] ?? [] as $laravelCodeRunnerPackage) {
+        if ($laravelCodeRunnerPackage['name'] === 'laravel/framework') {
+            $laravelCodeRunner['laravel_version'] = preg_replace('/[^0-9\.]/', '', $laravelCodeRunnerPackage['version']);
             break;
         }
     }
