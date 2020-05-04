@@ -9,7 +9,7 @@ define('LARAVEL_CODERUNNER_PROJECT_ROOT', LARAVEL_CODERUNNER_PROJECT_PATH . '/pu
 define('LARAVEL_CODERUNNER_INSTALL_LARAVEL', 'composer run-script install-laravel -d ' . str_replace('/bin', '', __DIR__));
 
 /*
- * Install or reset default larvel app
+ * Install or reset the default Laravel app
  */
 if (in_array($argv[1] ?? null, ['install-default', 'reset-default'])) {
     echo 'Installing default laravel app.' . PHP_EOL;
