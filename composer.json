@@ -3,6 +3,7 @@
     "description": "Add Laravel support to CodeRunner",
     "keywords": ["laravel", "coderunner", "mac", "tinker", "tinkerwell", "psy", "shell"],
     "license": "MIT",
+    "type": "library",
     "bin": [
         "bin/laravel-coderunner"
     ],
